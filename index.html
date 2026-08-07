@@ -1,11 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>F Point Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F Point Studio | Photography & Videography</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #111;
+            color: white;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(
+                rgba(0,0,0,0.6),
+                rgba(0,0,0,0.8)
+            ),
+            url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32") center/cover;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 35px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+        }
+
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #222;
+            padding: 30px;
+            width: 280px;
+            border-radius: 15px;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            background: #000;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Welcome to F Point Studio</h1>
-    <p>Your photography project management website is coming soon.</p>
+
+<section class="hero">
+    <div>
+        <h1>F POINT STUDIO</h1>
+        <p>Photography & Videography</p>
+        <a class="btn" href="#contact">Contact Us</a>
+    </div>
+</section>
+
+
+<section>
+    <h2>Our Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Wedding Photography</h3>
+            <p>Capturing your special moments with emotion and style.</p>
+        </div>
+
+        <div class="card">
+            <h3>Drone Videography</h3>
+            <p>Cinematic aerial shots for events and businesses.</p>
+        </div>
+
+        <div class="card">
+            <h3>Commercial Shoots</h3>
+            <p>Professional visuals for brands and businesses.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Available for photography and videography projects.</p>
+</section>
+
+
+<footer>
+    © 2026 F Point Studio
+</footer>
+
+
 </body>
 </html>
