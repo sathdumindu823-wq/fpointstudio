@@ -3,131 +3,950 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>F Point Studio | Photography & Videography</title>
 
+    <meta
+        name="description"
+        content="F Point Studio — Photography, videography and cinematic aerial productions."
+    >
+
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #111;
-            color: white;
+            background: #0a0908;
+            color: #f5f1eb;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
         }
 
-        .hero {
-            height: 100vh;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(10, 9, 8, 0.78);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            width: 90px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d6d0c8;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #c69b65;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            background: linear-gradient(
-                rgba(0,0,0,0.6),
-                rgba(0,0,0,0.8)
-            ),
-            url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32") center/cover;
+
+            padding: 120px 20px 80px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.48),
+                    rgba(0,0,0,0.82)
+                ),
+                url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32")
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 300px;
+            max-width: 75vw;
+            margin: 0 auto 30px;
+        }
+
+        .eyebrow {
+            color: #c69b65;
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 60px;
-            letter-spacing: 5px;
+            font-size: clamp(42px, 7vw, 90px);
+            font-weight: 300;
+            letter-spacing: 8px;
+            line-height: 1.1;
+            text-transform: uppercase;
         }
 
         .hero p {
-            margin-top: 20px;
-            font-size: 22px;
-            color: #ddd;
+            max-width: 650px;
+            margin: 25px auto 0;
+
+            color: #cfc8bf;
+
+            font-size: 17px;
+            letter-spacing: 1px;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 35px;
-            padding: 15px 35px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 30px;
+
+            padding: 15px 30px;
+
+            border: 1px solid #c69b65;
+            border-radius: 3px;
+
+            color: #f5f1eb;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transition: 0.3s;
         }
+
+        .btn:hover {
+            background: #c69b65;
+            color: #080706;
+        }
+
+        .btn-filled {
+            background: #c69b65;
+            color: #080706;
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
-            padding: 80px 10%;
-            text-align: center;
+            padding: 110px 8%;
         }
 
-        h2 {
-            font-size: 40px;
-            margin-bottom: 30px;
+        .section-heading {
+            max-width: 750px;
+            margin-bottom: 55px;
         }
+
+        .section-heading span {
+            color: #c69b65;
+
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-top: 15px;
+
+            font-size: clamp(35px, 5vw, 60px);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .section-heading p {
+            margin-top: 20px;
+
+            color: #a9a39c;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
 
         .services {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
         }
 
-        .card {
-            background: #222;
-            padding: 30px;
-            width: 280px;
-            border-radius: 15px;
+        .service-card {
+            min-height: 280px;
+
+            padding: 40px 30px;
+
+            background: #12100e;
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            transition: 0.35s;
         }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(198,155,101,0.5);
+        }
+
+        .service-number {
+            color: #c69b65;
+
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .service-card h3 {
+            margin-top: 30px;
+
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            margin-top: 15px;
+
+            color: #99938c;
+        }
+
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        .portfolio {
+            background: #0d0c0b;
+        }
+
+        .portfolio-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .portfolio-item {
+            min-height: 350px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #171513;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.6s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.85)
+                );
+        }
+
+        .portfolio-overlay h3 {
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        .portfolio-overlay p {
+            color: #c69b65;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 550px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.15),
+                    rgba(0,0,0,0.4)
+                ),
+                url("https://images.unsplash.com/photo-1542038784456-1ea8e935640e")
+                center / cover no-repeat;
+        }
+
+        .about-text h2 {
+            font-size: clamp(35px, 5vw, 60px);
+            font-weight: 300;
+        }
+
+        .about-text p {
+            margin-top: 25px;
+
+            color: #aaa39b;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.8)
+                ),
+                url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4")
+                center / cover no-repeat;
+        }
+
+        .cta h2 {
+            font-size: clamp(40px, 6vw, 75px);
+            font-weight: 300;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 20px auto 35px;
+
+            color: #ccc;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            padding: 30px;
-            text-align: center;
-            background: #000;
+            padding: 60px 8% 30px;
+
+            background: #050504;
+
+            border-top: 1px solid rgba(255,255,255,0.07);
         }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .footer-logo {
+            width: 130px;
+        }
+
+        .footer-text {
+            color: #777;
+
+            font-size: 13px;
+        }
+
+        .copyright {
+            margin-top: 40px;
+
+            color: #555;
+
+            font-size: 11px;
+            letter-spacing: 1px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                height: 70px;
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 100svh;
+            }
+
+            .hero-logo {
+                width: 220px;
+            }
+
+            .hero h1 {
+                letter-spacing: 4px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item {
+                min-height: 420px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                min-height: 400px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<section class="hero">
-    <div>
-        <h1>F POINT STUDIO</h1>
-        <p>Photography & Videography</p>
-        <a class="btn" href="#contact">Contact Us</a>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="#home">
+        <img
+            src="logo.png"
+            alt="F Point Studio"
+            class="nav-logo"
+        >
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#services">Services</a>
+        </li>
+
+        <li>
+            <a href="#portfolio">Portfolio</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            src="logo.png"
+            alt="F Point Studio Logo"
+            class="hero-logo"
+        >
+
+        <div class="eyebrow">
+            Photography · Videography · Aerial
+        </div>
+
+        <h1>
+            Moments<br>
+            Made Timeless
+        </h1>
+
+        <p>
+            Professional photography, cinematic videography
+            and aerial productions created for people,
+            brands and unforgettable moments.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#portfolio"
+                class="btn btn-filled"
+            >
+                View Portfolio
+            </a>
+
+            <a
+                href="#contact"
+                class="btn"
+            >
+                Get In Touch
+            </a>
+
+        </div>
+
     </div>
+
 </section>
 
 
-<section>
-    <h2>Our Services</h2>
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+    <div class="section-heading">
+
+        <span>
+            What We Do
+        </span>
+
+        <h2>
+            Visual storytelling
+            with purpose.
+        </h2>
+
+        <p>
+            From intimate moments to commercial productions,
+            we create visuals designed to make an impact.
+        </p>
+
+    </div>
+
 
     <div class="services">
 
-        <div class="card">
-            <h3>Wedding Photography</h3>
-            <p>Capturing your special moments with emotion and style.</p>
+
+        <div class="service-card">
+
+            <div class="service-number">
+                01
+            </div>
+
+            <h3>
+                Photography
+            </h3>
+
+            <p>
+                Weddings, portraits, events,
+                fashion and commercial photography
+                captured with a cinematic approach.
+            </p>
+
         </div>
 
-        <div class="card">
-            <h3>Drone Videography</h3>
-            <p>Cinematic aerial shots for events and businesses.</p>
+
+        <div class="service-card">
+
+            <div class="service-number">
+                02
+            </div>
+
+            <h3>
+                Videography
+            </h3>
+
+            <p>
+                Cinematic films, promotional videos,
+                events and social media content
+                crafted around your story.
+            </p>
+
         </div>
 
-        <div class="card">
-            <h3>Commercial Shoots</h3>
-            <p>Professional visuals for brands and businesses.</p>
+
+        <div class="service-card">
+
+            <div class="service-number">
+                03
+            </div>
+
+            <h3>
+                Aerial
+            </h3>
+
+            <p>
+                Professional drone photography
+                and cinematic aerial videography
+                for productions and businesses.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section
+    class="portfolio"
+    id="portfolio"
+>
+
+    <div class="section-heading">
+
+        <span>
+            Selected Work
+        </span>
+
+        <h2>
+            Our Portfolio
+        </h2>
+
+        <p>
+            A selection of our recent visual work.
+            Your actual photographs will be added here.
+        </p>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+        <div class="portfolio-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552"
+                alt="Wedding photography"
+            >
+
+            <div class="portfolio-overlay">
+
+                <h3>
+                    Weddings
+                </h3>
+
+                <p>
+                    PHOTOGRAPHY
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="portfolio-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1537633552985-df8429e8048b"
+                alt="Couple photography"
+            >
+
+            <div class="portfolio-overlay">
+
+                <h3>
+                    Portraits
+                </h3>
+
+                <p>
+                    PHOTOGRAPHY
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="portfolio-item">
+
+            <img
+                src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624"
+                alt="Camera production"
+            >
+
+            <div class="portfolio-overlay">
+
+                <h3>
+                    Productions
+                </h3>
+
+                <p>
+                    VIDEOGRAPHY
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="about">
+
+
+        <div class="about-image">
+        </div>
+
+
+        <div class="about-text">
+
+            <div class="section-heading">
+
+                <span>
+                    About F Point
+                </span>
+
+                <h2>
+                    We capture
+                    what matters.
+                </h2>
+
+            </div>
+
+
+            <p>
+                F Point Studio is a photography and
+                videography studio focused on creating
+                timeless visual stories.
+            </p>
+
+            <p>
+                From carefully planned productions to
+                genuine candid moments, our goal is to
+                create imagery that feels authentic,
+                cinematic and unforgettable.
+            </p>
+
+            <br>
+
+            <a
+                href="#contact"
+                class="btn"
+            >
+                Work With Us
+            </a>
+
         </div>
 
     </div>
+
 </section>
 
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Available for photography and videography projects.</p>
+
+<!-- =========================
+     CONTACT CTA
+========================= -->
+
+<section
+    class="cta"
+    id="contact"
+>
+
+    <div class="section-heading"
+         style="margin-left:auto;margin-right:auto;">
+
+        <span>
+            Let's Create
+        </span>
+
+        <h2>
+            Have a project
+            in mind?
+        </h2>
+
+        <p>
+            Tell us about your project and
+            let's create something unforgettable.
+        </p>
+
+        <a
+            href="mailto:hello@fpointstudio.com"
+            class="btn btn-filled"
+        >
+            Contact F Point Studio
+        </a>
+
+    </div>
+
 </section>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-    © 2026 F Point Studio
+
+    <div class="footer-content">
+
+
+        <img
+            src="logo.png"
+            alt="F Point Studio"
+            class="footer-logo"
+        >
+
+
+        <div class="footer-text">
+
+            Photography · Videography · Aerial
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 F Point Studio.
+        All Rights Reserved.
+
+    </div>
+
 </footer>
+
 
 
 </body>
